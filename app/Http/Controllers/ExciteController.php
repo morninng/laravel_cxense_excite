@@ -2,7 +2,7 @@
 
 
 include(app_path().'/Http/Controllers/lib/simple_html_dom.php');
-require_once 'Benchmark/Timer.php';
+// require_once 'Benchmark/Timer.php';
 
 class ExciteController extends Controller {
 
@@ -27,13 +27,13 @@ class ExciteController extends Controller {
 	public function detail($recipe_id)
 	{
 
-$timer2 = new \Benchmark_Timer(TRUE);
+// $timer2 = new \Benchmark_Timer(TRUE);
 
 		$excite_detail_url = "http://erecipe.woman.excite.co.jp/detail/" . $recipe_id;
 	//	echo $excite_detail_url;
 		$html_context = file_get_html($excite_detail_url);
 
-$timer2->setMarker('html context get');
+// $timer2->setMarker('html context get');
 
 		$header_html = $html_context->find('head')[0];
 
@@ -56,7 +56,7 @@ $timer2->setMarker('html context get');
 
 		$otherrecipe_context_html = $html_context->find('div[id=sub] > div[class=relate mT10]')[1];
 
-$timer2->stop();
+// $timer2->stop();
 //$timer2->display();
 
 		return view('recipedetail')
