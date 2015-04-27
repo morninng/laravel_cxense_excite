@@ -4,7 +4,7 @@
 	@yield('header_context')
 
 
-
+	@include('common.cxense_tag')
 
 <body data-twttr-rendered="true" style>
 	<div id="wrap">
