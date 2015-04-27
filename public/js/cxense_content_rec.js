@@ -82,7 +82,8 @@ function onGotContentRec(data){
 
 				userlike_span_dom.append(userlike_img_dom);
 				userlike_a_dom.append(userlike_span_dom)
-				userlike_a_dom.append("XXXXXXX")
+				var title_array = items_array[i].title.split("【");
+				userlike_a_dom.append(title_array[0]);
 				userlike_li_dom.append(userlike_a_dom);
 				slider_div_dom.append(userlike_li_dom);
 			}
@@ -97,12 +98,36 @@ function onGotContentRec(data){
 		$("#cxense_user_like").append(userlike_ul_dom);
 
 
+		var ranking_h2_dom = $('<h2>');
+		ranking_h2_dom.text("トレンドのレシピ");
+		var list_ol_dom = $('<ol>');
+		list_ol_dom.addClass( "thmblist");
+		var ranking_array = ["一位","二位","三位","四位","五位"];
 
+		for(var i=15;i<20;i++){
+			try{
+				var ranking_li_dom = $('<li>');
+				ranking_li_dom.addClass( "no1 rcpnm");
+				var ranking_span_dom = $('<span>');
+				ranking_span_dom.text(ranking_array[i-15]);
 
-
-
-		for(i=15;i<20;i++){
+				var ranking_a_dom = $('<a>');
+				ranking_a_dom.attr("href", items_array[i].click_url);
+				ranking_a_dom.attr("class", "recipename");
+				var title_array = items_array[i].title.split("【");
+				ranking_a_dom.append(title_array[0]);
+				ranking_li_dom.append(ranking_span_dom);
+				ranking_li_dom.append(ranking_a_dom);
+				list_ol_dom.append(ranking_li_dom);
+			}
+			catch(err){
+				console.log("something is missing");
+			}
 		}
+		$("#cxense_latest").append(ranking_h2_dom);
+		$("#cxense_latest").append(list_ol_dom);
+
+
 		//$("#cxense_trend").append(trend_ul_dom);
 	slide_start()
 	}

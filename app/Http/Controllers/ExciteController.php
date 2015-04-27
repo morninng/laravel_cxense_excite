@@ -2,8 +2,6 @@
 
 
 include(app_path().'/Http/Controllers/lib/simple_html_dom.php');
-
-
 require_once 'Benchmark/Timer.php';
 
 class ExciteController extends Controller {
@@ -52,13 +50,11 @@ $timer2->setMarker('html context get');
 		$brdrbox_mT10_html = $html_context->find('div[class=brdrbox mT10]')[1];
 		$mT10_html = $html_context->find('div[class=mT10]')[8];
 		$mT10_mB10html = $html_context->find('div[class=mT10 mB10]')[0];
-	//	$hrecipe_html = $html_context->find('div[class=hrecipe]')[0];
-	//	$hrecipe_html = $html_context->find('div[class=hrecipe]')[0];
-	//	$hrecipe_html = $html_context->find('div[class=hrecipe]')[0];
 
 
 		$osusume_context_html = $html_context->find('div[id=sub] > div[class=relate mT10 mB10]')[0];
 
+		$otherrecipe_context_html = $html_context->find('div[id=sub] > div[class=relate mT10]')[1];
 
 $timer2->stop();
 //$timer2->display();
@@ -77,8 +73,7 @@ $timer2->stop();
 				->with("brdrbox_mT10_html",$brdrbox_mT10_html)
 				->with("mT10_html",$mT10_html)
 				->with("mT10_mB10html",$mT10_mB10html)
-				->with("osusume_context_html",$osusume_context_html);
+				->with("osusume_context_html",$osusume_context_html)
+				->with("otherrecipe_context_html",$otherrecipe_context_html);
 	}
-
-	
 }

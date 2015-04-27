@@ -38,11 +38,14 @@
 
 
 @section('right_middle')
+
+<?php echo $otherrecipe_context_html ?>
+
 @endsection
 
 
 @section('right_below')
-right_below
+
 @endsection
 
 

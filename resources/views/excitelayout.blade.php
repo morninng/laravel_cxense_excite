@@ -3,6 +3,9 @@
 
 	@yield('header_context')
 
+
+
+
 <body data-twttr-rendered="true" style>
 	<div id="wrap">
 
@@ -20,25 +23,11 @@
 		<div id="sub">
 			@yield('right_above')
 			<div id="cxense_user_like" class="relate mT10" style="height:320px;"></div>
-			<script type="text/javascript">
-				(function($) {
-				   $(function() {
-				      $("#slider").simplyScroll({
-				      orientation: 'vertical',
-				      auto: true,
-				      manualMode: 'loop',
-				      frameRate: 20,
-				      speed: 1
-				      });
-				   });
-				})(jQuery);
-			</script>
+
 
 			@yield('right_middle')
-			<div id="cxense_latest" class="relate mT10" style="height:320px;"></div>
+			<div id="cxense_latest" class="relate mT10"></div>
 
-			@yield('right_below')
-			<div id="cxense_trend" class="relate mT10" style="height:320px;"></div>
 		</div>
 	</div>
 	<script type="text/javascript" src="http://cdn.cxense.com/cx.js"></script>
