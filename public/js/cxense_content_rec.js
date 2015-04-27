@@ -55,10 +55,10 @@ function onGotContentRec(data){
 		$("#cxense_kannrenn").append(kannrenn_ul_dom);
 
 
-		var latest_h2_title_dom = $('<h2>');
-		latest_h2_title_dom.text("あなたへのおすすめ料理");
-		var latest_ul_dom = $('<ul>');
-		latest_ul_dom.addClass( "thmblist");
+		var userlike_h2_title_dom = $('<h2>');
+		userlike_h2_title_dom.text("あなたへのおすすめ料理");
+		var userlike_ul_dom = $('<ul>');
+		userlike_ul_dom.addClass( "thmblist");
 		var simple_scroll_div_dom = $('<div>');
 		simple_scroll_div_dom.addClass( "simply-scroll simply-scroll-container");
 		var simple_scroll_clip_div_dom = $('<div>');
@@ -70,21 +70,21 @@ function onGotContentRec(data){
 
 		for(var i=0;i<15;i++){
 			try{
-				var latest_li_dom = $('<li>');
-				var latest_a_dom = $('<a>');
-				latest_a_dom.attr("href", items_array[i].click_url);
-				latest_a_dom.attr("class", "recipename");
-				var latest_span_dom = $('<span>');
-				latest_span_dom.addClass( "thmbwrapright");
-				var latest_img_dom = $('<img>');
-				latest_img_dom.attr("src", items_array[i].dominantimage);
-				latest_img_dom.attr("width", 115);
+				var userlike_li_dom = $('<li>');
+				var userlike_a_dom = $('<a>');
+				userlike_a_dom.attr("href", items_array[i].click_url);
+				userlike_a_dom.attr("class", "recipename");
+				var userlike_span_dom = $('<span>');
+				userlike_span_dom.addClass( "thmbwrapright");
+				var userlike_img_dom = $('<img>');
+				userlike_img_dom.attr("src", items_array[i].dominantimage);
+				userlike_img_dom.attr("width", 115);
 
-				latest_span_dom.append(latest_img_dom);
-				latest_a_dom.append(latest_span_dom)
-				latest_a_dom.append("XXXXXXX")
-				latest_li_dom.append(latest_a_dom);
-				slider_div_dom.append(latest_li_dom);
+				userlike_span_dom.append(userlike_img_dom);
+				userlike_a_dom.append(userlike_span_dom)
+				userlike_a_dom.append("XXXXXXX")
+				userlike_li_dom.append(userlike_a_dom);
+				slider_div_dom.append(userlike_li_dom);
 			}
 			catch(err){
 				console.log("something is missing");
@@ -92,9 +92,13 @@ function onGotContentRec(data){
 		}
 		simple_scroll_clip_div_dom.append(slider_div_dom);
 		simple_scroll_div_dom.append(simple_scroll_clip_div_dom);
-		latest_ul_dom.append(simple_scroll_div_dom);
-		$("#cxense_user_like").append(latest_h2_title_dom);
-		$("#cxense_user_like").append(latest_ul_dom);
+		userlike_ul_dom.append(simple_scroll_div_dom);
+		$("#cxense_user_like").append(userlike_h2_title_dom);
+		$("#cxense_user_like").append(userlike_ul_dom);
+
+
+
+
 
 
 		for(i=15;i<20;i++){
