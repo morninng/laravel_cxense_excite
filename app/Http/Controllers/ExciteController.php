@@ -57,6 +57,7 @@ $timer2->setMarker('html context get');
 	//	$hrecipe_html = $html_context->find('div[class=hrecipe]')[0];
 
 
+		$osusume_context_html = $html_context->find('div[id=sub] > div[class=relate mT10 mB10]')[0];
 
 
 $timer2->stop();
@@ -75,6 +76,9 @@ $timer2->stop();
 				->with("copyright_html",$copyright_html)
 				->with("brdrbox_mT10_html",$brdrbox_mT10_html)
 				->with("mT10_html",$mT10_html)
-				->with("mT10_mB10html",$mT10_mB10html);
+				->with("mT10_mB10html",$mT10_mB10html)
+				->with("osusume_context_html",$osusume_context_html);
 	}
+
+	
 }

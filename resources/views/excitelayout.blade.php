@@ -33,12 +33,16 @@
 				   });
 				})(jQuery);
 			</script>
-			@yield('right_middle')
 
-			<div id="cxense_latest" class="relate mT10"></div>
+			@yield('right_middle')
+			<div id="cxense_latest" class="relate mT10" style="height:320px;"></div>
+
 			@yield('right_below')
+			<div id="cxense_trend" class="relate mT10" style="height:320px;"></div>
 		</div>
 	</div>
+	<script type="text/javascript" src="http://cdn.cxense.com/cx.js"></script>
+	<script type="text/javascript" src=/js/cxense_content_rec.js></script>
 
 </body>
 </html>

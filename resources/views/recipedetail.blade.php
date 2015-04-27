@@ -28,19 +28,16 @@
 
 @section('below_kannrenn')
 
-<?php echo $mT10_html ?>
-<?php echo $mT10_mB10html ?>
-<br><br><br><br><br><br><br><br><br><br><br>v
+<?php echo $mT10_mB10html ?> 
 @endsection
 
 
 @section('right_above')
-right_above
+<?php echo $osusume_context_html ?>
 @endsection
 
 
 @section('right_middle')
-right_middle
 @endsection
 
 
