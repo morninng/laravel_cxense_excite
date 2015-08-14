@@ -30,8 +30,10 @@
 
 		</div>
 	</div>
+
+
 	<script type="text/javascript" src="http://cdn.cxense.com/cx.js"></script>
-	<script type="text/javascript" src=/js/cxense_content_rec.js></script>
+	@yield('original_script')
 
 </body>
 </html>
