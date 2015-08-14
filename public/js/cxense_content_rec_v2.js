@@ -3,16 +3,13 @@ window.onload=CXENSE_content_rec;
 
 function CXENSE_content_rec(){
 
-	var current_site_url = window.location.href;
-	var request_url;
-	var persisted_url_content_fetch = 'https://api.cxense.com/public/widget/data';
+	var persisted_url = 'https://api.cxense.com/public/widget/data';
 	var callback_content_rec_fetch = '&callback=onGotContentRec&media=json';
 	var content_recommend_query =  {"widgetId":"d982dacf1e822be0c5ccb3f9799de9b637edc2ab"};
-	var request_url = persisted_url_content_fetch + '?json=' + encodeURIComponent(cX.JSON.stringify(content_recommend_query)) + callback_content_rec_fetch;
+	var request_url = persisted_url + '?json=' + encodeURIComponent(cX.JSON.stringify(content_recommend_query)) + callback_content_rec_fetch;
 	console.log(request_url);
 
 	cX.library.loadScript(request_url);
-	console.log("request sent");
 }
 
 
